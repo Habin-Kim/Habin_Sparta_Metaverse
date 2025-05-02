@@ -15,11 +15,6 @@ public class PlayerController : BaseController
     //     camera = Camera.main;
     // }
 
-    protected override void HandleAction()
-    {
-      
-    }
-
     void OnMove(InputValue inputValue)
     {
         movementDirection = inputValue.Get<Vector2>();
