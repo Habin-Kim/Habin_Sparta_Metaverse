@@ -1,25 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class StackTrigger : MiniGameTrigger
+public class GameExitTrigger : MiniGameTrigger
 {
-    private void Start()
-    {
-        loadSceneName = "StackScene";
-    }
-
     protected override void HandlerTriggerEnter(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (triggerText != null && !isPlayerInRange)
+            if (triggerText != null)
             {
                 triggerText.gameObject.SetActive(true);
-                triggerText.text = "Press \"F\" To Start";
+                triggerText.text = "Press \"X\" To Start";
             }
-            isPlayerInRange = true;
+            isPlayerExit = true;
         }
     }
 
@@ -32,8 +26,8 @@ public class StackTrigger : MiniGameTrigger
                 triggerText.gameObject.SetActive(false);
             }
 
-            isPlayerInRange = false;
-            Debug.Log("스택 나감");
+            isPlayerExit = false;
+            Debug.Log("종료 나감");
         }
     }
 }

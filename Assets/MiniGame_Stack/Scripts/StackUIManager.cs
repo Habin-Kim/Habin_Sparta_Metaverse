@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 public enum UIState
 {
@@ -60,11 +61,7 @@ public class StackUIManager : MonoBehaviour
 
     public void OnClickExit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else      
-        Application.Quit();
-#endif
+        SceneManager.LoadScene("MainScene");
     }
 
     public void UpdateScore()
@@ -75,6 +72,10 @@ public class StackUIManager : MonoBehaviour
     public void SetScoreUI()
     {
         scoreUI.SetUI(theStack.Score, theStack.MaxCombo, theStack.BestScore, theStack.BestCombo);
+
+        PlayerPrefs.SetInt("BestScore", theStack.BestScore);
+        Debug.Log("BestScore 저장됨: " + theStack.BestScore);
+
         ChangeState(UIState.Score);
     }
 

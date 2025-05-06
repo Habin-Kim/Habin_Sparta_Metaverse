@@ -2,10 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MiniGameTrigger : MonoBehaviour
 {
+    public TextMeshProUGUI triggerText;
+
     protected bool isPlayerInRange = false;
+    protected bool isPlayerExit = false;
+    protected bool canPressF = false;
+    protected bool canPressX = false;
+
     protected string loadSceneName;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,6 +37,7 @@ public class MiniGameTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+
             Debug.Log("나감");
         }
     }
@@ -39,6 +47,15 @@ public class MiniGameTrigger : MonoBehaviour
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
             SceneManager.LoadScene(loadSceneName);
+        }
+
+        if (isPlayerExit && Input.GetKeyDown(KeyCode.X))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+    Application.Quit();
+#endif
         }
     }
 }
