@@ -11,7 +11,7 @@ public class GameExitTrigger : MiniGameTrigger
             if (triggerText != null)
             {
                 triggerText.gameObject.SetActive(true);
-                triggerText.text = "Press \"X\" To Start";
+                triggerText.text = "Press \"X\" To Game Exit";
             }
             isPlayerExit = true;
         }

@@ -53,7 +53,7 @@ public class TheStack : MonoBehaviour
             return;
         }
 
-        bestScore = PlayerPrefs.GetInt(BestComboKey, 0);
+        bestScore = PlayerPrefs.GetInt(BestScoreKey, 0);
         bestCombo = PlayerPrefs.GetInt(BestComboKey, 0);
 
         prevColor = GetRandomColor();

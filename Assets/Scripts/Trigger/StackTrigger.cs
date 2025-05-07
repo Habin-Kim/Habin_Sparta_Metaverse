@@ -17,7 +17,7 @@ public class StackTrigger : MiniGameTrigger
             if (triggerText != null && !isPlayerInRange)
             {
                 triggerText.gameObject.SetActive(true);
-                triggerText.text = "Press \"F\" To Start";
+                triggerText.text = "Press \"F\" To Stack Start";
             }
             isPlayerInRange = true;
         }

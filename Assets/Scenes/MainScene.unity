@@ -2357,7 +2357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05032cbe594e84f118b1a44664ac8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bestScoreText: {fileID: 2006663749}
 --- !u!114 &689495815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6897,7 +6896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05032cbe594e84f118b1a44664ac8e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bestScoreText: {fileID: 0}
 --- !u!222 &2006663751
 CanvasRenderer:
   m_ObjectHideFlags: 0
